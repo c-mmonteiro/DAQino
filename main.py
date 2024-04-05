@@ -34,7 +34,7 @@ class arduinoDAQ():
 
         #Cria Janela
         self.root = Tk()
-        self.root.title('arduinoDAQ')
+        self.root.title('DAQino')
         self.root.geometry("1200x670")
 
         self.top_frame = Frame(self.root, width=500, height=140)
@@ -47,7 +47,7 @@ class arduinoDAQ():
 ###########################################################
 ########### TEXTO (entrada de texto)
         #Texto do Periodo
-        self.lbl_periodo = tk.Label(self.top_frame, width=11, height = 1, text="Periodo de Aq:", justify=LEFT)
+        self.lbl_periodo = tk.Label(self.top_frame, width=11, height = 1, text="Aq Period:", justify=LEFT)
         self.lbl_periodo.place(y = 15, x = 10)
 
         self.input_periodo = tk.Text(self.top_frame, width = 10, height = 1)
@@ -56,7 +56,7 @@ class arduinoDAQ():
 
         #Texto do Numero de Amostras
 
-        self.lbl_num_amostras = tk.Label(self.top_frame, width=11, height = 1, text="Num Amostras:", justify=LEFT)
+        self.lbl_num_amostras = tk.Label(self.top_frame, width=11, height = 1, text="Samples:", justify=LEFT)
         self.lbl_num_amostras.place(y = 45, x = 10)
 
         self.input_num_amostras = tk.Text(self.top_frame, width = 10, height = 1)
@@ -65,7 +65,7 @@ class arduinoDAQ():
 
         #Texto do Numero do Canal Analógico
 
-        self.lbl_num_canal_an = tk.Label(self.top_frame, width=13, height = 1, text="Num Canal AN:", justify=LEFT)
+        self.lbl_num_canal_an = tk.Label(self.top_frame, width=13, height = 1, text="AN Port:", justify=LEFT)
         self.lbl_num_canal_an.place(y = 15, x = 190)
 
         self.input_num_canal_an = tk.Text(self.top_frame, width = 10, height = 1)
@@ -74,7 +74,7 @@ class arduinoDAQ():
 
         #Texto do Numero do Canal PWM
 
-        self.lbl_num_canal_pwm = tk.Label(self.top_frame, width=13, height = 1, text="Num Canal PWM:", justify=LEFT)
+        self.lbl_num_canal_pwm = tk.Label(self.top_frame, width=13, height = 1, text="PWM Port:", justify=LEFT)
         self.lbl_num_canal_pwm.place(y = 45, x = 190)
 
         self.input_num_canal_pwm = tk.Text(self.top_frame, width = 10, height = 1)
@@ -83,7 +83,7 @@ class arduinoDAQ():
 
         #Texto do Atraso do Degrau
 
-        self.lbl_atraso_degrau = tk.Label(self.top_frame, width=13, height = 1, text="Atraso Degrau (n):", justify=LEFT)
+        self.lbl_atraso_degrau = tk.Label(self.top_frame, width=13, height = 1, text="Step Delay(n):", justify=LEFT)
         self.lbl_atraso_degrau.place(y = 75, x = 190)
 
         self.input_atraso_degrau = tk.Text(self.top_frame, width = 10, height = 1)
@@ -92,7 +92,7 @@ class arduinoDAQ():
 
         #Texto da Razão Ciclica Final
 
-        self.lbl_razao_ciclica = tk.Label(self.top_frame, width=18, height = 1, text="Razão Ciclica/Val. Final:", justify=LEFT)
+        self.lbl_razao_ciclica = tk.Label(self.top_frame, width=18, height = 1, text="Duty Cycle/Final Val.:", justify=LEFT)
         self.lbl_razao_ciclica.place(y = 15, x = 380)
 
         self.input_razao_ciclica = tk.Text(self.top_frame, width = 10, height = 1)
@@ -101,7 +101,7 @@ class arduinoDAQ():
 
         #Texto da Razão Ciclica Inicial
 
-        self.lbl_razao_ciclica_pre_degrau = tk.Label(self.top_frame, width=18, height = 1, text="Razão Ciclica Pré Degrau:", justify=LEFT)
+        self.lbl_razao_ciclica_pre_degrau = tk.Label(self.top_frame, width=18, height = 1, text="Duty Cycle pre step:", justify=LEFT)
         self.lbl_razao_ciclica_pre_degrau.place(y = 45, x = 380)
 
         self.input_razao_ciclica_pre_degrau = tk.Text(self.top_frame, width = 10, height = 1)
@@ -110,7 +110,7 @@ class arduinoDAQ():
 
         #Texto do Tempo pré degrau
 
-        self.lbl_tempo_pre_degrau = tk.Label(self.top_frame, width=18, height = 1, text="Tempo Pré Degrau (s):", justify=LEFT)
+        self.lbl_tempo_pre_degrau = tk.Label(self.top_frame, width=18, height = 1, text="Wait Time(s):", justify=LEFT)
         self.lbl_tempo_pre_degrau.place(y = 75, x = 380)
 
         self.input_tempo_pre_degrau = tk.Text(self.top_frame, width = 10, height = 1)
@@ -119,7 +119,7 @@ class arduinoDAQ():
 
         #Texto Nome do Arquivo (sem extensão)
 
-        self.lbl_nome_arquivo = tk.Label(self.top_frame, width=11, height = 1, text="Nome Arquivo:", justify=LEFT)
+        self.lbl_nome_arquivo = tk.Label(self.top_frame, width=11, height = 1, text="File Name:", justify=LEFT)
         self.lbl_nome_arquivo.place(y = 75, x = 630)
 
         self.input_nome_arquivo = tk.Text(self.top_frame, width = 10, height = 1)
@@ -128,7 +128,7 @@ class arduinoDAQ():
 
         #Texto Caminho da pasta de arquivos
 
-        self.lbl_caminho_pasta = tk.Label(self.top_frame, width=12, height = 1, text="Caminho Pasta:", justify=LEFT)
+        self.lbl_caminho_pasta = tk.Label(self.top_frame, width=12, height = 1, text="File Path:", justify=LEFT)
         self.lbl_caminho_pasta.place(y = 15, x = 630)
 
         self.input_caminho_pasta = tk.Text(self.top_frame, width = 28, height = 1)
@@ -137,7 +137,7 @@ class arduinoDAQ():
 
         #Texto Caminho do script
 
-        self.lbl_caminho_script = tk.Label(self.top_frame, width=12, height = 1, text="Caminho Script:", justify=LEFT)
+        self.lbl_caminho_script = tk.Label(self.top_frame, width=12, height = 1, text="Script Path:", justify=LEFT)
         self.lbl_caminho_script.place(y = 45, x = 630)
 
         self.input_caminho_script = tk.Text(self.top_frame, width = 28, height = 1)
@@ -148,19 +148,19 @@ class arduinoDAQ():
         #Checkbox do Tempo
         self.var_tempo = IntVar()
 
-        self.cb_tempo = tk.Checkbutton(self.top_frame, text='Tempo', variable=self.var_tempo, onvalue=1, offvalue=0, command=self.atualizarGrafico)
+        self.cb_tempo = tk.Checkbutton(self.top_frame, text='Time', variable=self.var_tempo, onvalue=1, offvalue=0, command=self.atualizarGrafico)
         self.cb_tempo.place(y=90, x=15)
 
         #Checkbox do Tipo de Grafico
         self.var_grafico = IntVar()
 
-        self.cb_grafico = tk.Checkbutton(self.top_frame, text='Interpolar', variable=self.var_grafico, onvalue=1, offvalue=0, command=self.atualizarGrafico)
+        self.cb_grafico = tk.Checkbutton(self.top_frame, text='Interpolate', variable=self.var_grafico, onvalue=1, offvalue=0, command=self.atualizarGrafico)
         self.cb_grafico.place(y=115, x=15)
 
         #Checkbox do Volts
         self.var_volt = IntVar()
 
-        self.cb_volt = tk.Checkbutton(self.top_frame, text='Tensão', variable=self.var_volt, onvalue=1, offvalue=0, command=self.atualizarGrafico)
+        self.cb_volt = tk.Checkbutton(self.top_frame, text='Volts', variable=self.var_volt, onvalue=1, offvalue=0, command=self.atualizarGrafico)
         self.cb_volt.place(y=90, x=110)
 
         #Checkbox da FFT / Sinal
@@ -172,37 +172,37 @@ class arduinoDAQ():
         #Checkbox de Salvar
         self.var_salvar = IntVar()
 
-        self.cb_salvar = tk.Checkbutton(self.top_frame, text='Salvar Dados', variable=self.var_salvar, onvalue=1, offvalue=0)
+        self.cb_salvar = tk.Checkbutton(self.top_frame, text='Save Data', variable=self.var_salvar, onvalue=1, offvalue=0)
         self.cb_salvar.place(y=75, x=815)
 
 ############## BOTÂO (ativar função)     
         #Botão Medir
-        self.btn_medir = Button(self.top_frame, text="Medir", command=self.medir_dados, height = 1, width = 15)
+        self.btn_medir = Button(self.top_frame, text="Measure", command=self.medir_dados, height = 1, width = 15)
         self.btn_medir.place(y = 105, x = 200)
         self.btn_medir.config(state=DISABLED)
 
         #Botão Resposta ao degrau
-        self.btn_resp_degrau = Button(self.top_frame, text="Resposta ao Degrau", command=self.medir_resp_degrau, height = 1, width = 15)
+        self.btn_resp_degrau = Button(self.top_frame, text="Step Response", command=self.medir_resp_degrau, height = 1, width = 15)
         self.btn_resp_degrau.place(y = 105, x = 320)
         self.btn_resp_degrau.config(state=DISABLED)
 
         #Botão Acionar PWM
-        self.btn_acionar_pwm = Button(self.top_frame, text="Acionar PWM", command=self.acionar_pwm, height = 1, width = 15)
+        self.btn_acionar_pwm = Button(self.top_frame, text="Set PWM", command=self.acionar_pwm, height = 1, width = 15)
         self.btn_acionar_pwm.place(y = 105, x = 440)
         self.btn_acionar_pwm.config(state=DISABLED)
 
 
         #Botão Acionar Script
-        self.btn_acionar_script = Button(self.top_frame, text="Acionar Script", command=self.acionar_script, height = 1, width = 15)
+        self.btn_acionar_script = Button(self.top_frame, text="Start Script", command=self.acionar_script, height = 1, width = 15)
         self.btn_acionar_script.place(y = 105, x = 560)
         self.btn_acionar_script.config(state=DISABLED)
 
         #Botão Sobre
-        self.btn_sobre = Button(self.top_frame, text="Sobre", command=self.acionar_sobre, height = 1, width = 15)
+        self.btn_sobre = Button(self.top_frame, text="About", command=self.acionar_sobre, height = 1, width = 15)
         self.btn_sobre.place(y = 105, x = 680)
 
         #Botão Abrir porta
-        self.btn_abrir_porta = Button(self.top_frame, text="Abrir Porta", command=self.abrir_com_porta, height = 1, width = 15)
+        self.btn_abrir_porta = Button(self.top_frame, text="Open COM", command=self.abrir_com_porta, height = 1, width = 15)
         self.btn_abrir_porta.place(y = 85, x = 980)
 
 ############## Drop Down
@@ -216,7 +216,7 @@ class arduinoDAQ():
         self.comport =  StringVar(self.top_frame)
         self.comport.set(comport_list[0])
 
-        self.lbl_comport = tk.Label(self.top_frame, width=10, height = 1, text="Porta:", justify=LEFT)
+        self.lbl_comport = tk.Label(self.top_frame, width=10, height = 1, text="Port:", justify=LEFT)
         self.lbl_comport.place(y = 50, x = 950)
 
         self.dropDown_comport = OptionMenu(self.top_frame, self.comport, *comport_list)
@@ -225,7 +225,7 @@ class arduinoDAQ():
 
 ############## Label com informação que atualiza
         #Label frequencia
-        self.lbl_freq = tk.Label(self.top_frame, width=20, height = 1, text="Frequência: N/C Hz")
+        self.lbl_freq = tk.Label(self.top_frame, width=20, height = 1, text="Frequency: N/C Hz")
         self.lbl_freq.place(y = 20, x = 950)
 
         #Label Script
@@ -234,7 +234,7 @@ class arduinoDAQ():
 
 ############## Label fixa
         #Label Grafico
-        self.lbl_grafico = tk.Label(self.top_frame, width=20, height = 1, text="Gráfico")
+        self.lbl_grafico = tk.Label(self.top_frame, width=20, height = 1, text="Graphic")
         self.lbl_grafico.place(y = 75, x = 35)
 
         #Figura do IFC
@@ -293,7 +293,7 @@ class arduinoDAQ():
             ## Calcula a frequencia pelo cruzamento de zero para a label
             freq = processaDados(self.amostras_lista, (self.periodo)*TEMPO_PERIODO_AQUISICAO).freqCruzamentoZero()
             amostras = processaDados(self.amostras_lista, (self.periodo)*TEMPO_PERIODO_AQUISICAO).amostrasCruzamentoZero()
-            self.lbl_freq['text'] = f'Frequência: {freq:.2f} Hz {amostras}'
+            self.lbl_freq['text'] = f'Frequency: {freq:.2f} Hz {amostras}'
 
 
             self.atualizarGrafico()
@@ -325,7 +325,7 @@ class arduinoDAQ():
             ## Calcula a frequencia pelo cruzamento de zero para a label
             freq = processaDados(self.amostras_lista, (self.periodo)*TEMPO_PERIODO_AQUISICAO).freqCruzamentoZero()
             amostras = processaDados(self.amostras_lista, (self.periodo)*TEMPO_PERIODO_AQUISICAO).amostrasCruzamentoZero()
-            self.lbl_freq['text'] = f'Frequência: {freq:.2f} Hz {amostras}'
+            self.lbl_freq['text'] = f'Frequency: {freq:.2f} Hz {amostras}'
 
 
             self.atualizarGrafico()
@@ -380,13 +380,13 @@ class arduinoDAQ():
                         time.sleep(int(self.input_tempo_pre_degrau.get("1.0",END)))
 
                     else:
-                        messagebox.showerror(title='Tipo', message=f'Tipo de ação incorrete na linha {idx}!')
+                        messagebox.showerror(title='Type', message=f'ERRO: Action type unknow on line {idx}!')
 
             
             self.lbl_script['text'] = ''
 
     def acionar_sobre(self):
-        messagebox.showinfo(title='Sobre', message='Versão: 0.01 \nAutor: Carlos A M Monteiro\nData: 04/2024')
+        messagebox.showinfo(title='About', message='Version: 0.01 \nAutor: Carlos A M Monteiro\nDate: 04/2024')
 
     def abrir_com_porta(self):
 
@@ -397,12 +397,12 @@ class arduinoDAQ():
             self.btn_acionar_pwm.config(state=NORMAL)
             self.btn_acionar_script.config(state=NORMAL)
 
-            self.btn_abrir_porta.config(text="Fechar Porta")
+            self.btn_abrir_porta.config(text="Close Port")
             self.com_aberta = 1
 
         else:
             self.daq.fecharDAQ()
-            self.btn_abrir_porta.config(text="Abrir Porta")
+            self.btn_abrir_porta.config(text="Open Port")
             self.btn_medir.config(state=DISABLED)
             self.btn_resp_degrau.config(state=DISABLED)
             self.btn_acionar_pwm.config(state=DISABLED)
@@ -416,30 +416,30 @@ class arduinoDAQ():
             self.ax_fig_graph.clear()
 
             if (self.var_fft.get() == 1):
-                self.ax_fig_graph.set_title("FFT do Sinal")
+                self.ax_fig_graph.set_title("FFT")
                 self.ax_fig_graph.set_ylabel("Amplitude / 2 (Volts)")
-                self.ax_fig_graph.set_xlabel("Frequência (Hz)")
+                self.ax_fig_graph.set_xlabel("Frequency (Hz)")
                 x, y = processaDados(self.amostras_volt_lista, (self.periodo + 1)*TEMPO_PERIODO_AQUISICAO).fourier()
                 self.ax_fig_graph.scatter(x, y)
 
             else:
-                self.ax_fig_graph.set_title("Medição Analógica")
+                self.ax_fig_graph.set_title("Analog Measurement")
 
                 #Tensão / Digital
                 if(self.var_volt.get() == 1):
                     y = self.amostras_volt_lista
-                    self.ax_fig_graph.set_ylabel("Tensão (Volts)")
+                    self.ax_fig_graph.set_ylabel("Volts")
                 else:
                     y = self.amostras_lista
-                    self.ax_fig_graph.set_ylabel("Valor Digital (0-1023)")
+                    self.ax_fig_graph.set_ylabel("Digital Value (0-1023)")
 
                 #Tempo / Amostra
                 if(self.var_tempo.get() == 1):
                     x = np.arange(0,0.1*self.num_amostras*self.periodo,0.1*self.periodo)
-                    self.ax_fig_graph.set_xlabel("Tempo (ms)")
+                    self.ax_fig_graph.set_xlabel("Time (ms)")
                 else:
                     x = np.arange(0,self.num_amostras,1)
-                    self.ax_fig_graph.set_xlabel("Amostras [n]")
+                    self.ax_fig_graph.set_xlabel("Samples [n]")
 
                 #interpolação / amostra
                 if (self.var_grafico.get() == 1):
