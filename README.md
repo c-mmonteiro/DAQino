@@ -6,9 +6,9 @@ DAQino is a data aquisition system made using Arduino and Python. The system is 
 - run script to automate tests.
 
 All the samples measured will be shown at the graphic and it can be save on a log file, if configured.
------------------------------
-#HOW TO USE:
 
+-----------------------------
+**HOW TO USE:**
 1. Program Arduino with the firmware on DAQ folder.
 2. Install all requirements.
 
@@ -16,16 +16,16 @@ All the samples measured will be shown at the graphic and it can be save on a lo
 
 3. Run main.py file.
 ------------------------------
-#SCRIPT FILE
+**SCRIPT FILE:**
 
 The script will use the CSV standard, that is, it will divide your information with the ‘;’ character. In the first line it will have the title of each of the columns (which will be ignored by the program) following the sequence shown below. The subsequent lines will be the values ​​to be executed.
 
 -	Teste Number (will be the end of the file name)
 -	Test Type 
---	‘m’ for measure
---	‘d’ for step response
---	‘p’ for PWM drive
---	‘e’ for waiting time
+    *    ‘m’ for measure
+    *	‘d’ for step response
+    *	‘p’ for PWM drive
+    *	‘e’ for waiting time
 -	AD Port
 -	Aquisition Period (in us from 150 to 2550 with step of 10 us)
 -	Number of Samples (0 a 767)
@@ -37,25 +37,27 @@ The script will use the CSV standard, that is, it will divide your information w
 -	Save data (0 oe 1).
 
 Example:
-Num;Type;AD Port;Period;Samples;PWM Port;DC pre;Waiting Time;DC;Delay;Save
-1;m;0;150;750;6;0;0;0;0;1
-2;p;0;150;750;6;0;0;150;0;0
-3;e;0;150;750;6;0;3;0;0;0
-4;d;0;150;750;6;50;10;200;0;1
-5;a;0;150;750;6;50;1;200;0;1
-6;d;0;150;750;6;50;1;150;100;1
+
+Num;Type;AD Port;Period;Samples;PWM Port;DC pre;Waiting Time;DC;Delay;Save<br/>
+1;m;0;150;750;6;0;0;0;0;1<br/>
+2;p;0;150;750;6;0;0;150;0;0<br/>
+3;e;0;150;750;6;0;3;0;0;0<br/>
+4;d;0;150;750;6;50;10;200;0;1<br/>
+5;a;0;150;750;6;50;1;200;0;1<br/>
+6;d;0;150;750;6;50;1;150;100;1<br/>
 
 ------------------------------
-#LOG FILE
+**LOG FILE:**
+
 The measurement log files will be a list with each value on one line. The sequence of this list follows the sequence shown below.
 
-Period
-sample_number
-Type (Measurement (M) or step response (RD))
-Initial PWM(Duty Cycle)
-Final PWM(Duty Cycle)
-Sample 0
-Sample 1
+Period<br/>
+sample_number<br/>
+Type (Measurement (M) or step response (D))<br/>
+Initial PWM(Duty Cycle)<br/>
+Final PWM(Duty Cycle)<br/>
+Sample 0<br/>
+Sample 1<br/>
 ....
 
 
