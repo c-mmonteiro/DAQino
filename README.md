@@ -5,6 +5,8 @@ DAQino is a data aquisition system made using Arduino and Python. The system is 
 - do step response test.
 - run script to automate tests.
 
+![Not posissible to load image.](https://github.com/c-mmonteiro/DAQino/blob/main/Capturar.PNG)
+
 All the samples measured will be shown at the graphic and it can be save on a log file, if configured.
 
 -----------------------------
