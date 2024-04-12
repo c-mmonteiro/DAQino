@@ -72,6 +72,8 @@ class DAQ:
                 elif (idx == 512):
                     self.comport.write(bytearray([5,2]))
                     self.lerResposta()
+                    
+                
 
                 if ((idx >= 0) and (idx <= 255)):
                     self.comport.write(bytearray([4,idx]))
@@ -121,6 +123,7 @@ class DAQ:
             self.lerResposta()
             self.comport.write(bytearray([9,numero_de_amostras - 512]))
         self.lerResposta()
+        self.configRazaoCiclicaPWM(0)
         self.amostras_lista = self.lerListaAmostras(numero_de_amostras)
         return self.amostras_lista
     

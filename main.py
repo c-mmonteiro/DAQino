@@ -132,7 +132,7 @@ class arduinoDAQ():
         self.lbl_caminho_pasta.place(y = 15, x = 630)
 
         self.input_caminho_pasta = tk.Text(self.top_frame, width = 28, height = 1)
-        self.input_caminho_pasta.insert("1.0", 'C:/Users/Carlos/Downloads/SerialPythonArduino/Dados')
+        self.input_caminho_pasta.insert("1.0", 'C:/Users/Carlos/Downloads/DAQino/Dados')
         self.input_caminho_pasta.place(y = 15, x = 720)
 
         #Texto Caminho do script
@@ -141,7 +141,7 @@ class arduinoDAQ():
         self.lbl_caminho_script.place(y = 45, x = 630)
 
         self.input_caminho_script = tk.Text(self.top_frame, width = 28, height = 1)
-        self.input_caminho_script.insert("1.0", 'C:/Users/Carlos/Downloads/SerialPythonArduino/Script/script.csv')
+        self.input_caminho_script.insert("1.0", 'C:/Users/Carlos/Downloads/DAQino/Script/script.csv')
         self.input_caminho_script.place(y = 45, x = 720)
 
 ########### CHECLBOX (entrada 1/0)
@@ -261,7 +261,7 @@ class arduinoDAQ():
     def salvar_dados(self, tipo, razao_ciclica_inicial, razao_ciclica_final, complemento):
         ##Salva os dados
         if (self.var_salvar.get() == 1):
-            nome_arquivo = self.input_caminho_pasta.get("1.0",'end-1c') + "/" + self.input_nome_arquivo.get("1.0",'end-1c') + "_" + complemento + ".txt"
+            nome_arquivo = self.input_caminho_pasta.get("1.0",'end-1c') + "/" + self.input_nome_arquivo.get("1.0",'end-1c') + "_" + str(complemento) + ".txt"
             arquivo = open(nome_arquivo, "w")
             arquivo.write(self.input_periodo.get("1.0",END))
             arquivo.write(self.input_num_amostras.get("1.0",END))
@@ -316,8 +316,7 @@ class arduinoDAQ():
             self.daq.configRazaoCiclicaPWM(int(self.input_razao_ciclica_pre_degrau.get("1.0",END)))
             time.sleep(int(self.input_tempo_pre_degrau.get("1.0",END)))
     
-            self.amostras_lista = self.daq.respostaDegrau(self.num_amostras)
-            self.daq.configRazaoCiclicaPWM(0)
+            self.amostras_lista = self.daq.respostaDegrau(self.num_amostras)         
             self.amostras_volt_lista = self.daq.amostrasVolt()
                 
             self.salvar_dados('D', self.input_razao_ciclica_pre_degrau.get("1.0",'end-1c'), self.input_razao_ciclica.get("1.0",'end-1c'), self.complemento_nome_arquivo)
