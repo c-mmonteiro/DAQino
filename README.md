@@ -11,12 +11,23 @@ All the samples measured will be shown at the graphic and it can be save on a lo
 
 -----------------------------
 **HOW TO USE:**
-1. Program Arduino with the firmware on DAQ folder.
-2. Install all requirements.
+You can run the .exe or the Python Script.
+
+Run .exe:
+
+1. Download DAQino.exe, ifc.png and folder DAQ
+2. Program Arduino with the firmware on DAQ folder.
+3. Run DAQino.exe
+
+Run Script:
+
+1. Download all files.
+2. Program Arduino with the firmware on DAQ folder.
+3. Install all requirements.
 
     Run: pip install -r requirements.txt
 
-3. Run main.py file.
+4. Run main.py file.
 ------------------------------
 **SCRIPT FILE:**
 

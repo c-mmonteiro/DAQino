@@ -434,7 +434,7 @@ class arduinoDAQ():
 
                 #Tempo / Amostra
                 if(self.var_tempo.get() == 1):
-                    x = np.arange(0,0.1*self.num_amostras*self.periodo,0.1*self.periodo)
+                    x = np.arange(0,0.01*self.num_amostras*self.periodo,0.01*self.periodo)
                     self.ax_fig_graph.set_xlabel("Time (ms)")
                 else:
                     x = np.arange(0,self.num_amostras,1)

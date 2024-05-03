@@ -48,6 +48,6 @@ class processaDados:
         yf = fft(self.dados)
         xf = fftfreq(N, self.periodo_amostragem)
         xf = fftshift(xf)
-        yplot = fftshift(yf)
+        yplot = fftshift(np.abs(yf)/N)
 
         return xf, yplot
